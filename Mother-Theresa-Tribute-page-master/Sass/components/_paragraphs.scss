@@ -1,0 +1,9 @@
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  @include fluid-type(320px, 2180px, 16px, 23px);
+  line-height: 1.65rem;
+  @include bp(very-small) {
+    line-height: 1.2rem;
+  }
+}

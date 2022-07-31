@@ -1,0 +1,74 @@
+//RELATED CONTENT
+.related-content {
+  width: 100%;
+  height: auto;
+  padding: 1.5rem;
+
+  @include flexBox(column, center, center);
+  @include bp(very-small) {
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding: 0 1rem;
+
+    @include bp(medium) {
+      width: 80%;
+    }
+    @include bp(large) {
+      width: 80%;
+    }
+
+    li a {
+      position: relative;
+      transition: transform 0.3s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        bottom: -3px;
+        background-color: $cyan;
+
+        transform: scaleX(0);
+        transform-origin: bottom left;
+
+        @include bp(small) {
+          content: none;
+        }
+      }
+      &:hover::after {
+        transform: scaleX(1);
+      }
+      &:hover::after {
+        transform: scaleX(1);
+      }
+      &:focus {
+        outline: none;
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+      &:active::after {
+        transform: scaleX(1);
+      }
+
+      &:hover {
+        border-bottom: solid transparent;
+        @include bp(small) {
+          border-bottom: solid $cyan;
+        }
+      }
+      &:active,
+      &:focus {
+        border-bottom: solid transparent;
+        @include bp(small) {
+          border-bottom: solid $cyan;
+        }
+      }
+    }
+  }
+}
